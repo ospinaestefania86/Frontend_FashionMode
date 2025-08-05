@@ -1,0 +1,46 @@
+<div class="max-w-lg mx-auto mt-10 bg-white shadow-md p-6 rounded">
+  <h2 class="text-2xl font-bold mb-6 text-gray-800">Editar Producto</h2>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <label class="block mb-2 text-sm font-semibold">Nombre del producto</label>
+    <input
+      type="text"
+      formControlName="nombre"
+      class="w-full px-4 py-2 border rounded focus:outline-none focus:ring focus:border-blue-300"
+    />
+    <div
+      *ngIf="form.get('nombre')?.invalid && form.get('nombre')?.touched"
+      class="text-red-500 text-sm mt-1"
+    >
+      El nombre es obligatorio.
+    </div>
+
+    <label class="block mt-4 mb-2 text-sm font-semibold">Precio</label>
+    <input
+      type="number"
+      formControlName="precio"
+      class="w-full px-4 py-2 border rounded focus:outline-none focus:ring focus:border-blue-300"
+    />
+    <div
+      *ngIf="form.get('precio')?.invalid && form.get('precio')?.touched"
+      class="text-red-500 text-sm mt-1"
+    >
+      Precio inválido.
+    </div>
+
+    <label class="block mt-4 mb-2 text-sm font-semibold">Descripción</label>
+    <textarea
+      formControlName="descripcion"
+      class="w-full px-4 py-2 border rounded focus:outline-none focus:ring focus:border-blue-300"
+      rows="4"
+    ></textarea>
+
+    <button
+      type="submit"
+      class="mt-6 w-full bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700 transition"
+      [disabled]="form.invalid"
+    >
+      Actualizar
+    </button>
+  </form>
+</div>
