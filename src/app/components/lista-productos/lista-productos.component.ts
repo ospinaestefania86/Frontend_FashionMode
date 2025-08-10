@@ -24,7 +24,7 @@ export class ListaProductosComponent implements OnInit {
 
   cargarProductos(): void {
     this.productoService.obtenerProductos().subscribe((data) => {
-      this.productos = data.products;
+      this.productos = data;
     });
   }
 

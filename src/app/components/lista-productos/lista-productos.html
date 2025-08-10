@@ -26,9 +26,9 @@
           *ngFor="let producto of productos"
           class="border-b hover:bg-gray-50 transition"
         >
-          <td class="px-6 py-4 font-medium">{{ producto.title }}</td>
-          <td class="px-6 py-4">{{ producto.price | currency : "USD " }}</td>
-          <td class="px-6 py-4">{{ producto.description }}</td>
+          <td class="px-6 py-4 font-medium">{{ producto.nombre }}</td>
+          <td class="px-6 py-4">{{ producto.precio | currency : "USD " }}</td>
+          <td class="px-6 py-4">{{ producto.descripcion }}</td>
           <td class="px-6 py-4 text-center">
             <div class="flex items-center justify-center gap-2">
               <button
@@ -63,12 +63,12 @@
 >
   <div class="bg-white p-6 rounded shadow-md w-full max-w-md relative">
     <h2 class="text-xl font-bold mb-4 text-gray-800">Detalles del Producto</h2>
-    <p><strong>Nombre:</strong> {{ productoSeleccionado?.title }}</p>
+    <p><strong>Nombre:</strong> {{ productoSeleccionado?.nombre }}</p>
     <p>
       <strong>Precio:</strong>
-      {{ productoSeleccionado?.price | currency : "US" }}
+      {{ productoSeleccionado?.precio | currency : "USD " }}
     </p>
-    <p><strong>Descripción:</strong> {{ productoSeleccionado?.description }}</p>
+    <p><strong>Descripción:</strong> {{ productoSeleccionado?.descripcion }}</p>
     <img
       *ngIf="productoSeleccionado?.images?.length > 0"
       [src]="productoSeleccionado.images[0]"

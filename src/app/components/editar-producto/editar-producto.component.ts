@@ -33,9 +33,9 @@ export class EditarProductoComponent {
     this.productoService.obtenerProducto(this.id).subscribe((data) => {
       this.producto = data;
       this.form.patchValue({
-        nombre: this.producto.title,
-        precio: this.producto.price,
-        descripcion: this.producto.description,
+        nombre: this.producto.nombre,
+        precio: this.producto.precio,
+        descripcion: this.producto.descripcion,
       });
     });
   }
